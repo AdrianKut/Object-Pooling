@@ -11,17 +11,13 @@ public class ResourcesManager : MonoBehaviour
     {
         if (Instance == null)
         {
+            InitialMaterials();
             Instance = this;
         }
         else
         {
             Destroy(this);
         }
-    }
-
-    private void Start()
-    {
-        InitialMaterials();
     }
 
     private void InitialMaterials()
