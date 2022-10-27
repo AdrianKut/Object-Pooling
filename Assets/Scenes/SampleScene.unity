@@ -859,7 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 5
-  _spawnDelay: 0.01
+  _spawnDelay: 0.05
 --- !u!23 &407867602
 MeshRenderer:
   m_ObjectHideFlags: 0
