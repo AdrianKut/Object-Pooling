@@ -17,7 +17,7 @@ public class ColorsCounter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textCounterGreen;
     [SerializeField] private TextMeshProUGUI _textCounterYellow;
 
-    private Dictionary<string, int> _colorsDictionary = new();
+    private Dictionary<string, int> _colorsCounterDictionary = new();
     private Dictionary<string, TextMeshProUGUI> _textsCounterColorDictionary = new();
 
     private void Awake()
@@ -25,7 +25,7 @@ public class ColorsCounter : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            ColorsStartingValues();
+            InitialCounterColorsStartingValues();
             InitialColorsCounterDictionary();
         }
         else
@@ -34,14 +34,14 @@ public class ColorsCounter : MonoBehaviour
         }
     }
 
-    private void ColorsStartingValues()
+    private void InitialCounterColorsStartingValues()
     {
-        _colorsDictionary.Add("Black", 0);
-        _colorsDictionary.Add("Red", 0);
-        _colorsDictionary.Add("Pink", 0);
-        _colorsDictionary.Add("Blue", 0);
-        _colorsDictionary.Add("Green", 0);
-        _colorsDictionary.Add("Yellow", 0);
+        _colorsCounterDictionary.Add("Black", 0);
+        _colorsCounterDictionary.Add("Red", 0);
+        _colorsCounterDictionary.Add("Pink", 0);
+        _colorsCounterDictionary.Add("Blue", 0);
+        _colorsCounterDictionary.Add("Green", 0);
+        _colorsCounterDictionary.Add("Yellow", 0);
     }
 
     private void InitialColorsCounterDictionary()
@@ -56,17 +56,17 @@ public class ColorsCounter : MonoBehaviour
 
     public void IncreaseSelectedColorAmount(string key)
     {
-        _colorsDictionary[key] += 1;
-        _textsCounterColorDictionary[key].text = key + ": " + _colorsDictionary[key];
+        _colorsCounterDictionary[key] += 1;
+        _textsCounterColorDictionary[key].text = key + ": " + _colorsCounterDictionary[key];
 
-        _textAllObjects.text = "" + _colorsDictionary.Values.Sum();
+        _textAllObjects.text = "" + _colorsCounterDictionary.Values.Sum();
     }
 
     public void DecreaseSelectedColorAmount(string key)
     {
-        _colorsDictionary[key] -= 1;
-        _textsCounterColorDictionary[key].text = key + ": " + _colorsDictionary[key];
+        _colorsCounterDictionary[key] -= 1;
+        _textsCounterColorDictionary[key].text = key + ": " + _colorsCounterDictionary[key];
 
-        _textAllObjects.text = "" + _colorsDictionary.Values.Sum();
+        _textAllObjects.text = "" + _colorsCounterDictionary.Values.Sum();
     }
 }

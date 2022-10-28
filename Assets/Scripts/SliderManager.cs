@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SliderManager : MonoBehaviour
 {
-    [Header("Radius")]
+    [Header("Spawn Radius")]
     [SerializeField] private Slider _sliderRadius;
     [SerializeField] private TextMeshProUGUI _textRadius;
 
